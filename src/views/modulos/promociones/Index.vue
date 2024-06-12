@@ -127,13 +127,13 @@ const calculateCustomerTotal = (name) => {
     <div class="grid">
         <div class="col-12">
             <div class="card">
-                <h5>Row Expand</h5>
+                <h5>Ampliar Fila</h5>
                 <DataTable :value="products" v-model:expandedRows="expandedRows" dataKey="id"
                     tableStyle="min-width: 60rem">
                     <template #header>
                         <div>
-                            <Button icon="pi pi-plus" label="Expand All" @click="expandAll" class="mr-2 mb-2" />
-                            <Button icon="pi pi-minus" label="Collapse All" @click="collapseAll" class="mb-2" />
+                            <Button icon="pi pi-plus" label="Expandir Todo" @click="expandAll" class="mr-2 mb-2" />
+                            <Button icon="pi pi-minus" label="Desplegar Todo" @click="collapseAll" class="mb-2" />
                         </div>
                     </template>
                     <Column :expander="true" headerStyle="width: 3rem" />

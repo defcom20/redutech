@@ -40,6 +40,8 @@ const model = ref([
             { label: 'Usuarios', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
             { label: 'Sedes', icon: 'pi pi-fw pi-bookmark', to: '/uikit/formlayout' },
             { label: 'Promociones', icon: 'pi pi-fw pi-table', to: '/uikit/formlayout' },
+            { label: 'Clientes', icon: 'pi pi-fw pi-share-alt', to: '/uikit/formlayout' },
+            { label: 'Ventas', icon: 'pi pi-fw pi-mobile', to: '/uikit/formlayout' },
             // { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
             // { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
             // { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
@@ -58,6 +60,12 @@ const model = ref([
             // { label: 'Misc', icon: 'pi pi-fw pi-circle', to: '/uikit/misc' }
         ]
     },
+    {
+        label: 'Reportes',
+        items: [
+            { label: 'Ventas', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
+        ]
+    }
     // {
     //     label: 'Prime Blocks',
     //     items: [
@@ -205,7 +213,6 @@ const menu = computed(() => {
 
 <template>
     <ul class="layout-menu">
-        {{ routeName }}
         <template v-for="(item, i) in menu" :key="item">
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
             <li v-if="item.separator" class="menu-separator"></li>

@@ -180,7 +180,7 @@ const setChart = () => {
                 }
             }
         }
-    };    
+    };
 };
 watch(
     layoutConfig.theme,
@@ -264,12 +264,12 @@ watch(
                 <h5>Sales Overview</h5>
                 <Chart type="line" :data="lineData" :options="lineOptions" />
             </div> -->
-            
+
             <div class="card">
-                <h5>Bar Chart</h5>
+                <h5>Ventas por meses</h5>
                 <Chart type="bar" :data="barData" :options="barOptions"></Chart>
             </div>
-           
+
             <div class="card">
                 <div class="flex align-items-center justify-content-between mb-4">
                     <h5>Notifications</h5>
