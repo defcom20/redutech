@@ -246,7 +246,7 @@ const bodyStyle_ = ref('paddong: 0px !important;');
                             <InputText id="name2" type="text" />
                         </div>
                         <div class="field col">
-                            <label for="email2">Nombres y Apellidos</label>
+                            <label for="email2">Direccion</label>
                             <InputText id="email2" type="text" />
                         </div>
                     </div>
