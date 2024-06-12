@@ -6,7 +6,7 @@ import AppMenuItem from './AppMenuItem.vue';
 import { useRouter } from 'vue-router';
 const route = useRouter();
 
-const routeName = route.currentRoute.value.name;
+const routeName = route.currentRoute.value.path;
 
 const modelUsuario = ref([
     {
@@ -16,11 +16,15 @@ const modelUsuario = ref([
     {
         label: 'Modulos',
         items: [
+            { label: 'Consultas', icon: 'pi pi-fw pi-id-card', to: '/panel/consultas' },
+            { label: 'Clientes', icon: 'pi pi-fw pi-id-card', to: '/panel/clientes' },
+            { label: 'Promociones', icon: 'pi pi-fw pi-id-card', to: '/panel/promociones' },
+        ]
+    },
+    {
+        label: 'Reportes',
+        items: [
             { label: 'Atenciones', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-            { label: 'Clientes', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-            { label: 'Actualizaciones', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-            { label: 'Promociones', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-            { label: 'Inventario', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
         ]
     }
 ])
@@ -195,21 +199,17 @@ const model = ref([
 ]);
 
 const menu = computed(() => {
-    return routeName == 'panel' ? modelUsuario.value : model.value;
+    return routeName.includes("panel") ? modelUsuario.value : model.value;
 })
 </script>
 
 <template>
     <ul class="layout-menu">
+        {{ routeName }}
         <template v-for="(item, i) in menu" :key="item">
             <app-menu-item v-if="!item.separator" :item="item" :index="i"></app-menu-item>
             <li v-if="item.separator" class="menu-separator"></li>
         </template>
-        <!-- <li>
-            <a href="https://www.primefaces.org/primeblocks-vue/#/" target="_blank">
-                <img src="/layout/images/banner-primeblocks.png" alt="Prime Blocks" class="w-full mt-3" />
-            </a>
-        </li> -->
     </ul>
 </template>
 

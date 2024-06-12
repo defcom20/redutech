@@ -18,7 +18,7 @@ const logoUrl = computed(() => {
 const onDashboard = () => {
     if (email.value == 'admin') {
         router.push('/dashboard');
-    } 
+    }
     if (email.value == 'usuario') {
         router.push('/panel');
     }
@@ -46,8 +46,10 @@ const onDashboard = () => {
                             style="padding: 1rem" v-model="email" />
 
                         <label for="password1" class="block text-900 font-medium text-xl mb-2">Contraseña</label>
-                        <Password id="password1" v-model="password" placeholder="Ingrese Contraseña" :toggleMask="true"
-                            class="w-full mb-3" inputClass="w-full" :inputStyle="{ padding: '1rem' }"></Password>
+                        <Password @keyup.enter="onDashboard" id="password1" v-model="password"
+                            placeholder="Ingrese Contraseña" weakLabel="Débil" mediumLabel="Medio" strongLabel="Fuerte"
+                            :toggleMask="true" class="w-full mb-3" inputClass="w-full"
+                            :inputStyle="{ padding: '1rem' }"></Password>
 
                         <!-- <div class="flex align-items-center justify-content-between mb-5 gap-5">
                             <div class="flex align-items-center">

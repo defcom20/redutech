@@ -28,7 +28,22 @@ const router = createRouter({
                     path: '/panel',
                     name: 'panel',
                     component: () => import('@/views/DashboardPanel.vue')
-                }
+                },
+                {
+                    path: '/panel/consultas',
+                    name: 'consultas',
+                    component: () => import('@/views/modulos/consultas/Index.vue')
+                },
+                {
+                    path: '/panel/clientes',
+                    name: 'clientes',
+                    component: () => import('@/views/modulos/clientes/Index.vue')
+                },
+                {
+                    path: '/panel/promociones',
+                    name: 'promociones',
+                    component: () => import('@/views/modulos/promociones/Index.vue')
+                },
             ]
         }
     ]
